@@ -1,0 +1,12 @@
+.side_wrapper {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+}
+.side_top {
+}
+.side_center {
+}
+.side_bottom {
+}
