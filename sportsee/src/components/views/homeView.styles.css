@@ -1,0 +1,26 @@
+.home_container {
+	display: flex;
+	height: 80vh;
+	justify-content: center;
+	align-items: center;
+}
+.home_container li {
+	display: flex;
+	width: 20vh;
+	height: 20vh;
+	margin: 10vh;
+}
+.home_container li a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: black;
+}
+.home_container li a p {
+	font-size: 2vh;
+}
+.home_icon {
+	width: 10vh;
+	margin-bottom: 2vh;
+}

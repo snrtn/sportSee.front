@@ -1,0 +1,55 @@
+.recharts-cartesian-axis-line {
+	display: none;
+}
+.recharts-wrapper {
+	z-index: 99;
+}
+
+.customTooltip {
+	background: rgba(255, 255, 255, 1);
+	font-size: 16px;
+	font-weight: 500;
+	padding: 12px 8px;
+}
+
+.line {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.1);
+	z-index: 3;
+}
+
+.composedChart {
+	position: relative;
+	width: fit-content;
+	background: red;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.composedChartTitle {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	max-width: 145px;
+	z-index: 5;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: 24px;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+@media only screen and (max-width: 1280px) {
+	.composedChart {
+		width: 200px;
+		height: 200px;
+	}
+
+	.lineChart {
+		width: 200px !important;
+		height: 200px !important;
+	}
+}

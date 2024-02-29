@@ -1,0 +1,34 @@
+.side_wrapper {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.side_center {
+	display: flex;
+	justify-items: center;
+	flex-direction: column;
+	align-items: center;
+	gap: 30px;
+}
+.side_center_iconBox {
+	width: 6vh;
+	height: 6vh;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;
+}
+.side_icon {
+	width: 3vh;
+}
+.side_bottom {
+	color: white;
+	transform: rotate(270deg);
+	width: 30vh;
+	margin-top: 10vh;
+	font-size: 12px;
+	line-height: 24px;
+}

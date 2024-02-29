@@ -1,16 +1,25 @@
 .header_wrapper {
 	display: flex;
 	height: 10vh;
+	background-color: #020203;
 }
 .header_left {
 	flex-grow: 1;
-	border: 1px solid black;
 	display: flex;
 	align-items: center;
+	margin-left: 4vh;
+}
+.header_icon {
+	width: 17.5vh;
 }
 .header_right {
 	flex-grow: 5;
-	border: 1px solid black;
 	display: flex;
 	align-items: center;
+	justify-content: space-evenly;
+	font-size: 1.8vh;
+}
+
+.header_right a {
+	color: white !important;
 }
