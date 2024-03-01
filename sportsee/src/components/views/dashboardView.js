@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './dashboardView.styles.css';
-
-// components
 import SideMenu from '../common/sideNavigation/dashboard.js';
 import BarChart from '../dashboards/barCharts.js';
 import ComposedChart from '../dashboards/composedChart.js';
 import PieChart from '../dashboards/pieChart.js';
 import RadarChart from '../dashboards/radarChart.js';
 import Nutrients from '../dashboards/nutrients.js';
+import NotFoundData from '../common/errors/notFoundData.js';
+import { useData } from '../common/hooks/hookData.js';
 
-// hooks
-import { useData } from '../common/hooks/dataContext.js';
+// mock
+// import { useData } from '../common/hooks/mockHook.js';
 
 const DashboardView = () => {
 	const { userId } = useParams();
@@ -22,10 +22,10 @@ const DashboardView = () => {
 
 	useEffect(() => {
 		fetchData(userId);
-	}, [userId, fetchData]);
+	}, [fetchData, userId]);
 
-	if (loading) return <div>Loading...</div>;
-	if (error) return <div>Error: {error.message}</div>;
+	if (loading) return <div className='isSet'>Loading...</div>;
+	if (error) return <NotFoundData error={error.message} />;
 
 	return (
 		<div className='dashboard_wrapper'>
@@ -38,7 +38,7 @@ const DashboardView = () => {
 					<h1>
 						Bonjour
 						<span>
-							{userData.data.userInfos.firstName} {userData.data.userInfos.lastName}
+							{userData.userInfos?.firstName} {userData.userInfos?.lastName}
 						</span>
 					</h1>
 					<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>

@@ -4,7 +4,7 @@ const Layout = (props) => {
 	return (
 		<div>
 			<Header />
-			<div style={{ height: '100% !important' }}>{props.children}</div>
+			<div>{props.children}</div>
 		</div>
 	);
 };

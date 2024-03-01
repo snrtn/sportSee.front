@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext, useCallback } from 'react';
+import React, { createContext, useReducer, useContext, useCallback } from 'react';
 import axios from 'axios';
 
 const DataContext = createContext();
@@ -31,20 +31,20 @@ const dataReducer = (state, action) => {
 
 export const DataProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(dataReducer, initialState);
+	const apiUrl = process.env.REACT_APP_API_URL;
 
 	const fetchData = useCallback(async (userId) => {
+		dispatch({ type: 'FETCH_ERROR', payload: null });
 		try {
-			const userResponse = await axios.get(`http://localhost:3000/user/${userId}`);
-			dispatch({ type: 'FETCH_USER_DATA', payload: userResponse.data });
+			const userData = await axios.get(`${apiUrl}/user/${userId}`);
+			const userActivity = await axios.get(`${apiUrl}/user/${userId}/activity`);
+			const userAverageSessions = await axios.get(`${apiUrl}/user/${userId}/average-sessions`);
+			const userPerformance = await axios.get(`${apiUrl}/user/${userId}/performance`);
 
-			const activityResponse = await axios.get(`http://localhost:3000/user/${userId}/activity`);
-			dispatch({ type: 'FETCH_USER_ACTIVITY', payload: activityResponse.data });
-
-			const sessionsResponse = await axios.get(`http://localhost:3000/user/${userId}/average-sessions`);
-			dispatch({ type: 'FETCH_USER_AVERAGE_SESSIONS', payload: sessionsResponse.data });
-
-			const performanceResponse = await axios.get(`http://localhost:3000/user/${userId}/performance`);
-			dispatch({ type: 'FETCH_USER_PERFORMANCE', payload: performanceResponse.data });
+			dispatch({ type: 'FETCH_USER_DATA', payload: userData.data.data });
+			dispatch({ type: 'FETCH_USER_ACTIVITY', payload: userActivity.data.data });
+			dispatch({ type: 'FETCH_USER_AVERAGE_SESSIONS', payload: userAverageSessions.data.data });
+			dispatch({ type: 'FETCH_USER_PERFORMANCE', payload: userPerformance.data.data });
 		} catch (error) {
 			dispatch({ type: 'FETCH_ERROR', payload: error });
 		}

@@ -1,5 +1,5 @@
 import './composedChart.styles.css';
-import { LineChart, Line, XAxis, Tooltip, ReferenceArea, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ReferenceArea } from 'recharts';
 
 const ComposedChart = ({ data }) => {
 	const days = (day) => {
@@ -30,7 +30,7 @@ const ComposedChart = ({ data }) => {
 			<LineChart
 				width={300}
 				height={300}
-				data={data.data?.sessions}
+				data={data.sessions}
 				margin={{ top: 80, right: 15, left: 15, bottom: 30 }}
 				style={chartStyle}
 				className='lineChart'

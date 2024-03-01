@@ -9,7 +9,7 @@
 }
 .dashboard_right {
 	flex-grow: 7;
-	margin: 5vh 9vh;
+	margin: 4vh 8vh;
 }
 
 .dashboard_right_header h1 {
@@ -23,13 +23,11 @@
 .dashboard_box {
 	display: flex;
 }
-.dashboard_box_left {
-	flex-grow: 2;
-}
+
 .dashboard_box_left_top {
 	width: 100vh;
 
-	margin: 2rem 0 3rem 0;
+	margin: 2rem 0 1rem 0;
 	background-color: #fbfbfb;
 
 	padding: 2rem;
@@ -41,7 +39,15 @@
 .dashboard_box_right {
 	width: 30vh;
 	margin-top: 2rem;
-	flex-grow: 1;
+	margin-left: 2vh;
+}
+
+.isSet {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 90vh;
 }
 
 @media only screen and (max-width: 1280px) {
@@ -52,5 +58,13 @@
 
 	.dashboard_box_left_top {
 		margin: 2rem 0 1rem 0;
+	}
+
+	.dashboard_box_left {
+		width: 75vh;
+	}
+
+	.dashboard_box_right {
+		margin-left: 0vh;
 	}
 }

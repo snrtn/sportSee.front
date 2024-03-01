@@ -13,7 +13,7 @@ const Nutrients = ({ data }) => {
 				</div>
 				<div>
 					<div>
-						<p className='nutrient_title'>{data.data?.keyData.calorieCount}kCal</p>
+						<p className='nutrient_title'>{data.keyData?.calorieCount}kCal</p>
 						<p className='nutrient_desc'>Calories</p>
 					</div>
 				</div>
@@ -23,7 +23,7 @@ const Nutrients = ({ data }) => {
 					<img src={proteine} alt='icon de calorie' className='nutrient_icon' />
 				</div>
 				<div>
-					<p className='nutrient_title'>{data.data?.keyData.proteinCount}g</p>
+					<p className='nutrient_title'>{data.keyData?.proteinCount}g</p>
 					<p className='nutrient_desc'>Proteines</p>
 				</div>
 			</article>
@@ -32,7 +32,7 @@ const Nutrients = ({ data }) => {
 					<img src={glucide} alt='icon de calorie' className='nutrient_icon' />
 				</div>
 				<div>
-					<p className='nutrient_title'>{data.data?.keyData.carbohydrateCount}g</p>
+					<p className='nutrient_title'>{data.keyData?.carbohydrateCount}g</p>
 					<p className='nutrient_desc'>Glucides</p>
 				</div>
 			</article>
@@ -41,7 +41,7 @@ const Nutrients = ({ data }) => {
 					<img src={lipide} alt='icon de calorie' className='nutrient_icon' />
 				</div>
 				<div>
-					<p className='nutrient_title'>{data.data?.keyData.lipidCount}g</p>
+					<p className='nutrient_title'>{data.keyData?.lipidCount}g</p>
 					<p className='nutrient_desc'>Lipides</p>
 				</div>
 			</article>

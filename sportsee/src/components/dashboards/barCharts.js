@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 import './barCharts.styles.css';
 
 export default function BarCharts({ data }) {
-	const sessionsData = data.data?.sessions;
+	const sessionsData = data.sessions;
 
 	function CustomTooltip({ active, payload }) {
 		if (active && payload && payload.length) {
@@ -39,7 +39,7 @@ export default function BarCharts({ data }) {
 						XAxis
 						tickLine={false}
 						axisLine={{ stroke: '#DEDEDE' }}
-						tickFormatter={(value, index) => index + 1}
+						tickFormatter={(index) => index + 1}
 						tick={{ fontSize: 14 }}
 						tickMargin={15}
 					/>
