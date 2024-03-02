@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// components
 import App from './App';
 import Home from './components/views/homeView.js';
 import Dashboard from './components/views/dashboardView.js';
 import NotFound from './components/common/errors/notFound.js';
+
+// hooks
 import { DataProvider } from './components/common/hooks/hookData.js';
 
 // mock

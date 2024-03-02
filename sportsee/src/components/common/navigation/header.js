@@ -1,7 +1,7 @@
-import './header.styles.css';
-import TopMenu from './topMenu.js';
-import logo from '../../assets/logo-navbar.svg';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo-navbar.svg';
+import TopMenu from './topMenu.js';
+import './header.styles.css';
 
 const Header = () => {
 	return (

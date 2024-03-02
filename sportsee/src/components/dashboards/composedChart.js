@@ -1,5 +1,5 @@
-import './composedChart.styles.css';
 import { LineChart, Line, XAxis, Tooltip, ReferenceArea } from 'recharts';
+import './composedChart.styles.css';
 
 const ComposedChart = ({ data }) => {
 	const days = (day) => {

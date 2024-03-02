@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import './dashboardView.styles.css';
+
+// components
 import SideMenu from '../common/sideNavigation/dashboard.js';
 import BarChart from '../dashboards/barCharts.js';
 import ComposedChart from '../dashboards/composedChart.js';
@@ -8,6 +10,8 @@ import RadialBarCharts from '../dashboards/radialBarCharts.js';
 import RadarCharts from '../dashboards/radarCharts.js';
 import Nutrients from '../dashboards/nutrients.js';
 import NotFoundData from '../common/errors/notFoundData.js';
+
+// hooks
 import { useData } from '../common/hooks/hookData.js';
 
 // mock
