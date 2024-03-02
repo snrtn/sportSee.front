@@ -9,7 +9,7 @@ const mockData = {
 				lastName: 'Dovineau',
 				age: 31,
 			},
-			score: 0.12,
+			score: 12,
 			keyData: {
 				calorieCount: 1930,
 				proteinCount: 155,
@@ -24,7 +24,7 @@ const mockData = {
 				lastName: 'Ratorez',
 				age: 34,
 			},
-			score: 0.3,
+			score: 30,
 			keyData: {
 				calorieCount: 2500,
 				proteinCount: 90,

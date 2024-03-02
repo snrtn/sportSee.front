@@ -24,6 +24,8 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 60px;
+	height: 60px;
 	padding: 55px;
 	border-radius: 50%;
 	background: white;
