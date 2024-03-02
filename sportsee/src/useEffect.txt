@@ -1,0 +1,25 @@
+useEffect prend deux arguments : une fonction qui exécute l'effet secondaire, et un tableau de dépendances. Le tableau de dépendances est optionnel.
+
+useEffect(() => {
+  // Logique de l'effet secondaire
+}, [dependencies]);
+
+Comment cela fonctionne
+
+01. Exécution après le rendu : La fonction d'effet secondaire à l'intérieur de useEffect est exécutée après que le rendu du composant est terminé. Comme elle s'exécute de manière asynchrone après que le navigateur a mis à jour le DOM, elle n'affecte pas directement le rendu.
+
+02. Tableau de dépendances : En passant un tableau de dépendances comme second argument à useEffect, vous pouvez contrôler l'exécution de la fonction d'effet secondaire en fonction des changements de valeur de ces dépendances. Si un tableau vide ([]) est passé, l'effet ne s'exécutera qu'une seule fois, juste après le montage du composant.
+
+03. Fonction de nettoyage(Cleanup) : La fonction d'effet secondaire à l'intérieur de useEffect peut retourner une fonction de nettoyage. Cette fonction de nettoyage est appelée juste avant que le composant soit démonté ou avant que l'effet soit à nouveau exécuté. Elle permet d'effectuer des opérations de nettoyage pour éviter les fuites de mémoire, annuler des abonnements, ou nettoyer des minuteries.
+
+useEffect(() => {
+  const timer = setTimeout(() => {
+    // Logique du minuteur
+  }, 1000);
+
+  return () => {
+    clearTimeout(timer); // Nettoie le minuteur avant que le composant soit démonté ou mis à jour.
+  };
+}, []);
+
+useEffect permet d'effectuer divers effets secondaires à chaque rendu du composant, et de réagir spécifiquement aux changements de certaines valeurs si nécessaire. Cela offre une manière d'implémenter des patterns similaires aux méthodes de cycle de vie dans les composants fonctionnels.

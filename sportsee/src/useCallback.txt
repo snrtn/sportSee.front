@@ -1,0 +1,40 @@
+Le hook useCallback de React est utilisé pour mémoriser des fonctions. Cela peut être utile dans les cas où une fonction est passée en tant que prop à un composant enfant et que vous ne voulez pas que cette fonction soit recréée à chaque rendu du composant parent. Cela aide à éviter des rendus inutiles des composants enfants qui dépendent de cette fonction comme prop, améliorant ainsi les performances de l'application.
+
+Comment utiliser useCallback
+useCallback prend deux paramètres : une fonction inline et un tableau de dépendances. La fonction est recréée uniquement si une des valeurs dans le tableau de dépendances a changé entre les rendus.
+
+const memoizedCallback = useCallback(
+  () => {
+    // La fonction que vous voulez mémoriser
+  },
+  [dependencies], // Les dépendances en raison desquelles la fonction doit être recréée
+);
+Exemple d'utilisation
+Supposons que vous avez un composant Child qui accepte une fonction onClick en tant que prop, et vous ne voulez pas que Child se rerende à chaque fois que le composant parent se rerende, sauf si la fonction onClick doit logiquement changer.
+
+
+import React, { useCallback, useState } from 'react';
+
+function ParentComponent() {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount(c => c + 1);
+  }, []); // `increment` ne sera recréée que si les dépendances dans le tableau (actuellement vide) changent
+
+  return (
+    <div>
+      Count: {count}
+      <Child onClick={increment} />
+    </div>
+  );
+}
+
+const Child = React.memo(({ onClick }) => {
+  console.log('Child rendu');
+  return <button onClick={onClick}>Incrementer</button>;
+});
+
+Dans cet exemple, même si ParentComponent se rerende à cause d'un changement d'état ou pour une autre raison, la fonction increment ne sera pas recréée à moins que ses dépendances (dans ce cas, il n'y en a pas) changent. Puisque increment ne change pas, le composant Child ne se rerendera pas inutilement, car il utilise React.memo et sa prop onClick n'a pas changé.
+
+Utiliser useCallback de cette manière peut aider à optimiser les performances des applications React, en particulier pour les applications complexes avec de nombreux composants ou une hiérarchie profonde de composants.

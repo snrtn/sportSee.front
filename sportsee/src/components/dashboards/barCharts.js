@@ -32,7 +32,7 @@ export default function BarCharts({ data }) {
 					</div>
 				</div>
 			</article>
-			<ResponsiveContainer width={'100%'} height={300}>
+			<ResponsiveContainer width={'100%'} height={282} className='in_barchart_container'>
 				<BarChart data={sessionsData} barGap={8} margin={{ top: 60, right: 10, left: 10, bottom: 10 }}>
 					<CartesianGrid strokeDasharray='5 5' vertical={false} />
 					<XAxis

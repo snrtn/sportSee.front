@@ -10,6 +10,15 @@ import { DataProvider } from './components/common/hooks/hookData.js';
 // mock
 // import { DataProvider } from './components/common/hooks/mockHook.js';
 
+// Active le mode strict de React pour identifier les problèmes potentiels dans l'application.
+// <React.StrictMode></React.StrictMode>
+
+// Englobe l'application dans le composant DataProvider pour fournir les données à tous les composants enfants.
+// <DataProvider></DataProvider>
+
+// Définit un chemin pour capturer toutes les URL non reconnues et rendre le composant NotFound.
+// <Route path='*' element={<NotFound />} />
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>

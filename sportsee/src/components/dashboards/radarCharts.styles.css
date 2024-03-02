@@ -1,0 +1,19 @@
+.radarCharts_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #282d30;
+	border-radius: 6px;
+	width: 300px;
+	height: 300px;
+}
+
+@media only screen and (max-width: 1280px) {
+	.radarCharts_container {
+		width: 182px !important;
+		height: 182px !important;
+	}
+	.in_radarCharts_container {
+		height: 170px !important;
+	}
+}

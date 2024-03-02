@@ -7,3 +7,9 @@
 	height: 90vh;
 	text-align: center;
 }
+
+.nomatch_icon {
+	width: 80vh;
+	height: 40vh;
+	margin-bottom: 10vh;
+}

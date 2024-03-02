@@ -46,4 +46,9 @@
 	.barchart {
 		padding-left: 1vh;
 	}
+
+	.in_barchart_container {
+		height: 265px !important;
+		margin-left: -20px;
+	}
 }

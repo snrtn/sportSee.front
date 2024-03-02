@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import not from '../../assets/404.svg';
 import './notFound.styles.css';
 
 const NotFound = () => {
 	return (
 		<div className='nomatch'>
-			<img src={logo} alt='Logo de SportSee' className='home_icon' />
-			<Link to='/'>Aller à la page précédente</Link>
+			<img src={not} alt='NotFound' className='nomatch_icon' />
+			<Link to='/'>Aller à la page d'accueil</Link>
 		</div>
 	);
 };

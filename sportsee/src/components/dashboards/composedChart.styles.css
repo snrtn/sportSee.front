@@ -1,12 +1,5 @@
-.recharts-cartesian-axis-line {
-	display: none;
-}
-.recharts-wrapper {
-	z-index: 99;
-}
-
 .customTooltip {
-	background: rgba(255, 255, 255, 1);
+	background: #ffffff;
 	font-size: 16px;
 	font-weight: 500;
 	padding: 12px 8px;
@@ -16,40 +9,46 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	width: 70px;
+	width: 85px;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.1);
 	z-index: 3;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
 
-.composedChart {
+.composedChart_container {
 	position: relative;
 	width: fit-content;
 	background: red;
 	border-radius: 10px;
-	overflow: hidden;
 }
 
-.composedChartTitle {
+.composedChart_title {
 	position: absolute;
 	top: 20px;
 	left: 20px;
 	max-width: 145px;
 	z-index: 5;
-	font-size: 15px;
-	font-weight: 500;
-	line-height: 24px;
-	color: rgba(255, 255, 255, 0.5);
+	color: #ffffff80;
 }
 
 @media only screen and (max-width: 1280px) {
-	.composedChart {
-		width: 200px;
-		height: 200px;
+	.composedChart_title {
+		font-size: 12px;
 	}
 
-	.lineChart {
-		width: 200px !important;
-		height: 200px !important;
+	.line {
+		width: 50px;
+	}
+
+	.composedChart_container {
+		width: 182px !important;
+		height: 182px !important;
+	}
+
+	.in_composedChart_container {
+		width: 182px !important;
+		height: 182px !important;
 	}
 }

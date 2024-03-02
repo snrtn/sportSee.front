@@ -1,12 +1,13 @@
 .nutrient_container article {
 	display: flex;
 
-	width: 25vh;
-	height: 12vh;
+	width: 27vh;
+	height: 14vh;
 	background-color: #00000005;
 
 	align-items: center;
 	margin-bottom: 5vh;
+	border-radius: 6px;
 }
 .nutrient_container .nutrient_icon_box {
 	width: 5vh;
@@ -51,5 +52,9 @@
 @media only screen and (max-width: 1280px) {
 	.nutrient_container {
 		margin-left: 5vh;
+	}
+
+	.nutrient_container article {
+		margin-bottom: 2vh;
 	}
 }

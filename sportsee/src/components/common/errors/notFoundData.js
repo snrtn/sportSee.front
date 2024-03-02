@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
-import logo from '../../assets/logo.svg';
+import not from '../../assets/404.svg';
 import './notFound.styles.css';
 
 const NotFoundData = ({ error }) => {
 	return (
 		<div className='nomatch'>
-			<img src={logo} alt='Logo de SportSee' className='home_icon' />
+			<img src={not} alt='NotFound' className='nomatch_icon' />
 			<Link to='/'>
 				<p>Error: {error}</p>
-				<p> Aller à la page précédente</p>
+				<p>Aller à la page d'accueil</p>
 			</Link>
 		</div>
 	);

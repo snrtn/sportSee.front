@@ -22,9 +22,9 @@ const ComposedChart = ({ data }) => {
 	const chartStyle = { background: 'transparent' };
 
 	return (
-		<div className='composedChart'>
+		<div className='composedChart_container'>
 			<div className='line'></div>
-			<div className='composedChartTitle'>
+			<div className='composedChart_title'>
 				<p>Durée moyenne des sessions</p>
 			</div>
 			<LineChart
@@ -33,9 +33,16 @@ const ComposedChart = ({ data }) => {
 				data={data.sessions}
 				margin={{ top: 80, right: 15, left: 15, bottom: 30 }}
 				style={chartStyle}
-				className='lineChart'
+				className='in_composedChart_container'
 			>
-				<XAxis dataKey='day' tickFormatter={days} tick={{ fill: 'rgba(255, 255, 255, 0.5)', fontSize: 15 }} dy={10} />
+				<XAxis
+					axisLine={false}
+					tickLine={false}
+					dataKey='day'
+					tickFormatter={days}
+					tick={{ fill: '#FFFFFF80', fontSize: 15 }}
+					dy={10}
+				/>
 				<Tooltip content={<CustomTooltip />} />
 				<ReferenceArea x1={'S'} x2={'D'} y1={60} y2={60} stroke='green' strokeOpacity={1} />
 				<Line type='natural' dataKey='sessionLength' dot={false} stroke='url(#gradient)' />
