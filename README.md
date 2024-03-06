@@ -4,9 +4,6 @@ https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
 
 
 *****
-Nom du proje
-
-*****
 Aperçu du projet:
 Ce projet est une application de tableau de bord développée avec React, se concentrant sur la visualisation de données et la composition d'interface utilisateur.
 
