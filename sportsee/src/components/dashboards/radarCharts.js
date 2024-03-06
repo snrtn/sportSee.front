@@ -1,5 +1,6 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 import './radarCharts.styles.css';
+import PropTypes from 'prop-types';
 
 const convertData = (data) => {
 	function matching(str) {
@@ -38,6 +39,18 @@ const RadarCharts = ({ data }) => {
 			</ResponsiveContainer>
 		</div>
 	);
+};
+
+RadarCharts.propTypes = {
+	data: PropTypes.shape({
+		data: PropTypes.arrayOf(
+			PropTypes.shape({
+				kind: PropTypes.number.isRequired,
+				value: PropTypes.number.isRequired,
+			}),
+		).isRequired,
+		kind: PropTypes.objectOf(PropTypes.string).isRequired,
+	}).isRequired,
 };
 
 export default RadarCharts;

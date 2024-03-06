@@ -1,8 +1,9 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import './barCharts.styles.css';
+import PropTypes from 'prop-types';
 
-export default function BarCharts({ data }) {
+const BarCharts = ({ data }) => {
 	const sessionsData = data.sessions;
 
 	function CustomTooltip({ active, payload }) {
@@ -70,4 +71,17 @@ export default function BarCharts({ data }) {
 			</ResponsiveContainer>
 		</div>
 	);
-}
+};
+
+BarCharts.propTypes = {
+	data: PropTypes.shape({
+		sessions: PropTypes.arrayOf(
+			PropTypes.shape({
+				kilogram: PropTypes.number.isRequired,
+				calories: PropTypes.number.isRequired,
+			}),
+		).isRequired,
+	}).isRequired,
+};
+
+export default BarCharts;

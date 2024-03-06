@@ -1,5 +1,6 @@
 import { LineChart, Line, XAxis, Tooltip, ReferenceArea } from 'recharts';
 import './composedChart.styles.css';
+import PropTypes from 'prop-types';
 
 const ComposedChart = ({ data }) => {
 	const days = (day) => {
@@ -55,6 +56,17 @@ const ComposedChart = ({ data }) => {
 			</LineChart>
 		</div>
 	);
+};
+
+ComposedChart.propTypes = {
+	data: PropTypes.shape({
+		sessions: PropTypes.arrayOf(
+			PropTypes.shape({
+				day: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+				sessionLength: PropTypes.number.isRequired,
+			}).isRequired,
+		).isRequired,
+	}).isRequired,
 };
 
 export default ComposedChart;

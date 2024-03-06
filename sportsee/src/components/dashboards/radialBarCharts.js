@@ -1,5 +1,6 @@
 import { RadialBarChart, RadialBar } from 'recharts';
 import './radialBarCharts.styles.css';
+import PropTypes from 'prop-types';
 
 const RadialBarCharts = ({ data }) => {
 	const score = isNaN(parseInt(data.score)) ? 0 : parseInt(data.score);
@@ -33,6 +34,12 @@ const RadialBarCharts = ({ data }) => {
 			</RadialBarChart>
 		</div>
 	);
+};
+
+RadialBarCharts.propTypes = {
+	data: PropTypes.shape({
+		score: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+	}).isRequired,
 };
 
 export default RadialBarCharts;

@@ -3,6 +3,7 @@ import proteine from '../assets/chicken.svg';
 import glucide from '../assets/apple.svg';
 import lipide from '../assets/burger.svg';
 import './nutrients.styles.css';
+import PropTypes from 'prop-types';
 
 const Nutrients = ({ data }) => {
 	return (
@@ -47,6 +48,17 @@ const Nutrients = ({ data }) => {
 			</article>
 		</section>
 	);
+};
+
+Nutrients.propTypes = {
+	data: PropTypes.shape({
+		keyData: PropTypes.shape({
+			calorieCount: PropTypes.number.isRequired,
+			proteinCount: PropTypes.number.isRequired,
+			carbohydrateCount: PropTypes.number.isRequired,
+			lipidCount: PropTypes.number.isRequired,
+		}).isRequired,
+	}).isRequired,
 };
 
 export default Nutrients;
