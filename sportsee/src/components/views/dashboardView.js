@@ -56,16 +56,16 @@ const DashboardView = () => {
 				<div className='dashboard_box'>
 					<div className='dashboard_box_left'>
 						<div className='dashboard_box_left_top'>
-							<BarChart data={userActivity} />
+							{userActivity.sessions ? <BarChart data={userActivity} /> : <div>data not found</div>}
 						</div>
 						<div className='dashboard_box_left_bottom'>
-							<ComposedChart data={userAverageSessions} />
-							<RadarCharts data={userPerformance} />
-							<RadialBarCharts data={userData} />
+							{userAverageSessions.sessions ? <ComposedChart data={userAverageSessions} /> : <div>data not found</div>}
+							{userPerformance.data ? <RadarCharts data={userPerformance} /> : <div>data not found</div>}
+							{userData.score ? <RadialBarCharts data={userData} /> : <div>data not found</div>}
 						</div>
 					</div>
 					<div className='dashboard_box_right'>
-						<Nutrients data={userData} />
+						{userData.keyData ? <Nutrients data={userData} /> : <div>data not found</div>}
 					</div>
 				</div>
 			</div>

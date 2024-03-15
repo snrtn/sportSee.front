@@ -8,7 +8,7 @@ const ComposedChart = ({ data }) => {
 		return week[day];
 	};
 
-	function CustomTooltip({ active, payload, label }) {
+	function CustomTooltip({ active, payload }) {
 		if (active && payload && payload.length) {
 			return (
 				<div className='customTooltip'>
