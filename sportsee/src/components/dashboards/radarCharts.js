@@ -4,12 +4,16 @@ import PropTypes from 'prop-types';
 
 const convertData = (data) => {
 	function matching(str) {
-		if (str === 'intensity') return 'Intensité';
-		if (str === 'speed') return 'Vitesse';
-		if (str === 'strength') return 'Force';
-		if (str === 'endurance') return 'Endurance';
-		if (str === 'energy') return 'Energie';
-		if (str === 'cardio') return 'Cardio';
+		const translations = {
+			intensity: 'Intensité',
+			speed: 'Vitesse',
+			strength: 'Force',
+			endurance: 'Endurance',
+			energy: 'Energie',
+			cardio: 'Cardio',
+		};
+
+		return translations[str] || '';
 	}
 
 	if (!data || !data.data) {
