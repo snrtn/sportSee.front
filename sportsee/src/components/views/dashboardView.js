@@ -37,12 +37,6 @@ const DashboardView = () => {
 	// Si une erreur survient, affiche le composant NotFoundData.
 	if (error) return <NotFoundData error={error.message} />;
 
-	// La gestion des calls asynchrones et des promesses
-	// useState est utilisé pour initialiser et mettre à jour l'état local du composant.
-	// useEffect sert à exécuter des effets de bord (dans ce cas, un appel API) après chaque rendu, mais ici nous passons un tableau vide comme second argument pour s'assurer que l'effet s'exécute une seule fois après le premier rendu.
-	// fetch est une fonction native pour faire des requêtes réseau. Elle retourne une promesse qui, une fois résolue, donne accès à la réponse de la requête.
-	// L'utilisation des promesses avec async/await rend le code plus lisible et facile à comprendre, en particulier lorsqu'il s'agit de chaînes d'opérations asynchrones. Notez l'importance de la gestion des erreurs avec try/catch pour s'assurer que toute erreur pendant le chargement des données est capturée et gérée appropriément.
-
 	return (
 		<div className='dashboard_wrapper'>
 			<div className='dashboard_left'>

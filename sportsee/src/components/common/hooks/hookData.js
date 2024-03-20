@@ -40,8 +40,8 @@ const dataReducer = (state, action) => {
 			return state;
 	}
 };
-// Le hook useReducer est utilisé pour gérer l'état de l'application et mettre à jour cet état via la fonction dispatch. Selon le type d'action, la fonction dataReducer met à jour l'état de manière appropriée.
 
+// Le hook useReducer est utilisé pour gérer l'état de l'application et mettre à jour cet état via la fonction dispatch. Selon le type d'action, la fonction dataReducer met à jour l'état de manière appropriée.
 // Composant fournisseur de données, gérant et distribuant l'état global aux composants enfants.
 export const DataProvider = ({ children }) => {
 	// Utilise le hook useReducer pour gérer l'état et la fonction de dispatch.
